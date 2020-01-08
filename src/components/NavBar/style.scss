@@ -1,0 +1,8 @@
+.navbar{
+    position: sticky !important;
+    top: 0 !important;
+    .nav-toolbar{
+        display: flex;
+        justify-content: space-between;
+    }
+}
