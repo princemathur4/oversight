@@ -4,11 +4,11 @@ import './index.scss';
 import App from './App';
 import Auth from '@aws-amplify/auth';
 import { theme } from "./theme";
+import * as serviceWorker from './serviceWorker';
 
 if (module.hot) {
     module.hot.accept();
 }
-console.log("REACT_APP_USER_POOL_ID",process.env.REACT_APP_USER_POOL_ID)
 
 Auth.configure({
     mandatorySignId: true,
@@ -18,3 +18,5 @@ Auth.configure({
 });
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
+serviceWorker.unregister();
