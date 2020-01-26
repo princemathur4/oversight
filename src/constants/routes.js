@@ -1,4 +1,5 @@
-import ProductUpload from "../modules/ProductUpload";
+import AddProduct from "../modules/AddProduct";
+import UpdateProduct from "../modules/UpdateProduct";
 import Login from "../modules/Login";
 
 export const routes = [
@@ -21,12 +22,21 @@ export const routes = [
         }
     },
     {
-        path: "/product_upload",
-        component: ProductUpload,
-        name: "productUpload",
+        path: "/add_product",
+        component: AddProduct,
+        name: "addProduct",
         authRequired: true,
         customProps: {
-            name: "productUpload",
+            name: "addProduct",
+        }
+    },
+    {
+        path: "/update_product",
+        component: UpdateProduct,
+        name: "updateProduct",
+        authRequired: true,
+        customProps: {
+            name: "updateProduct",
         }
     },
 ]

@@ -23,9 +23,15 @@ class Login extends Component {
         isSubmitted: false
     };
 
+    componentDidMount(){
+        if(this.props.auth.isAuthenticated){
+            this.props.history.push('/add_product')
+        }
+    }
+    
     componentDidUpdate(){
         if(this.props.auth.isAuthenticated){
-            this.props.history.push('/product_upload')
+            this.props.history.push('/add_product')
         }
     }
 
@@ -174,11 +180,12 @@ class Login extends Component {
                                     </span>
                                 </div>
                             }
-                            <Button variant="contained" color="primary" className="login-btn"
+                            <button
+                                className={this.state.isLoading ? "button login-button is-loading" : "login-button"}
                                 onClick={this.onLoginSubmit}
                             >
                                 Sign In
-                            </Button>
+                            </button>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { getSession } from "../../utils/AuthUtils";
 import "./style.scss";
 import axios from "axios";
 // import find from "lodash.find";
-import { Button, Select, MenuItem, TextField, FormControl, InputLabel } from '@material-ui/core';
+import { Button, TextField} from '@material-ui/core';
 import { titleCase } from "../../utils/utilFunctions";
 
 const moment = require('moment');
@@ -22,7 +22,7 @@ axios.interceptors.response.use((response) => {
     return Promise.reject(err);
 });
 
-export default class ProductUpload extends Component {
+export default class AddProduct extends Component {
     constructor(props) {
         super(props);
         this.fileInput = React.createRef();
@@ -191,12 +191,12 @@ export default class ProductUpload extends Component {
     render() {
         return (
             <div className="product-form-container">
-                <div className="product-form-card">
-                    <div className="card-header">
+                <div className="card">
+                    {/* <div className="product-card-header">
                         <div className="card-title">
                             Add products
                         </div>
-                    </div>
+                    </div> */}
                     <div className="card-body">
                         <input 
                             type="file" 

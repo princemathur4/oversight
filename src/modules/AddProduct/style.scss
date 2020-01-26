@@ -5,14 +5,15 @@
     flex-grow: 2;
     justify-content: center;
     
-    .product-form-card{
+    .card{
         display: flex;
         flex-direction: column;
+        padding: 1rem;
         max-width: 600px;
         height: 100%;
         flex-grow: 2;
         justify-content: center;
-        .card-header{
+        .product-card-header{
             padding: 1rem;
             .card-title{
                 font-size: 2rem;

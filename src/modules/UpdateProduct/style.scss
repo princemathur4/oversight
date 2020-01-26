@@ -1,0 +1,146 @@
+.update-products-container{
+    width: 80%;
+    display: flex;
+    flex-grow: 2;
+    max-height: 100%;
+    flex-direction: column;
+    margin: 2rem auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .product-content{
+        display: flex;
+        justify-content: space-between;
+
+        .product-images{
+            width: 30%;
+            .product-dropdown-image{
+                padding: 1.5rem;
+            }
+        }
+        .update-form{
+            width: 70%;
+            padding: 0 4vw;
+            .field-container{
+                display: flex;
+                flex-grow: 2;
+                justify-content: space-between;
+                margin: 0.8rem 0;
+                .field-title{
+                    display: flex;
+                    align-items: center;
+                    font-weight: 600;
+                }
+                .field-form{
+                    // flex-grow: 2;
+                    display: flex;
+                    input{
+                        border-radius: 0;
+                        box-shadow: 0 !important;
+                        &:focus{
+                            box-shadow: 0 !important;
+                        } 
+                    }
+                    button{
+                        height: 100%;
+                    }
+                    .count {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0 0.5rem;
+                        font-weight: 600;
+                        min-width: 2rem;
+                        background: #020b8a;
+                        color: white;
+                        height: 100%;
+                    }
+                }
+            }
+            .submit-btn{
+                width: 100%;
+                color: white;
+                background: rgb(43, 70, 100);
+                margin-bottom: 1rem;
+            }
+            .response-text{
+                text-align: center;
+                margin: 0.5rem 0;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                border-radius: 4px;
+                min-height: 2em;
+                padding: 0.75em;
+                &.is-error{
+                    color: #cc0f35;
+                    background-color: #feecf0;
+                }
+                &.is-info{
+                    color: #1b79b0;
+                    background: #e2f5ff;
+                }
+                &.is-success{
+                    color: #048348;
+                    background: #e2fff4;
+                }
+                .response-tag{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 1.5;
+                    font-size: 1rem;
+                    flex-grow: 2;
+                    flex-wrap: wrap;
+                    padding-left: 0.75em;
+                    padding-right: 0.75em;
+                }
+            }
+        }
+    }
+}
+.visible.menu.transition{
+    max-height: 60vh !important;
+}
+.product-dropdown-item{
+    display: flex;
+    .product-dropdown-left-container{
+        padding-right: 1rem;
+        .product-dropdown-thumbnail-image{
+            width: 5vw;
+            height: 5vw;
+            object-fit: cover;
+        }
+    }
+    .product-dropdown-right-container{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .first-column{
+            display: flex;
+            flex-direction: column;
+            .product-title{
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: black;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            .product-stock{
+                padding: 0.5rem 0;
+            }   
+            
+        }
+        .second-column{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+            .price{
+                color: rgb(0, 94, 131);
+                padding-right: 1rem;
+            }
+        }
+    }
+}

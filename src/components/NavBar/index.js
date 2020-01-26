@@ -1,12 +1,13 @@
 import { AppBar, Toolbar, Button, Typography, IconButton } from "@material-ui/core";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import './style.scss';
 import { Hub } from 'aws-amplify';
 import Auth from "@aws-amplify/auth";
+import { Link } from "react-router-dom";
 
 
 export default class NavBar extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         Hub.listen("auth", ({ payload: { event, data } }) => {
             switch (event) {
@@ -40,19 +41,30 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <AppBar position="static" className="navbar">
-                <Toolbar className="nav-toolbar">
-                    <Typography variant="h6" >Labroz Oversight</Typography>
-                    {
-                        !this.props.auth.isAuthenticated && this.props.location.pathname !== "/login" &&
-                        <Button color="inherit">Login</Button>
-                    }
-                    {
-                        this.props.auth.isAuthenticated && 
-                        <Button color="inherit" onClick={this.handleLogout}>Logout</Button>
-                    }
-                </Toolbar>
-            </AppBar>
+            <div className="nav-bar">
+                <div className="nav-header">
+                    <img src="larboz-logo.png" className="logo-img"></img>
+                    <div className="heading">Labroz Oversight</div>
+                </div>
+                {this.props.auth.isAuthenticated &&
+                <Fragment>
+                    <div class="tabs">
+                        <ul>
+                            <li class={this.props.location.pathname === "/add_product" ? "is-active" : ""}>
+                                <Link to="/add_product">Add Products</Link>
+                            </li>
+                            <li class={this.props.location.pathname === "/update_product" ? "is-active" : ""}>
+                                <Link to="/update_product">Update Products</Link>
+                            </li>
+                            <li class={this.props.location.pathname === "/update_order" ? "is-active" : ""}>
+                                <Link to="/update_order">Update Orders</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <button className="logout-btn button is-light" onClick={this.handleLogout}>Logout</button>
+                </Fragment>
+                }
+            </div>
         )
     }
 }

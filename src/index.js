@@ -6,10 +6,6 @@ import Auth from '@aws-amplify/auth';
 import { theme } from "./theme";
 import * as serviceWorker from './serviceWorker';
 
-if (module.hot) {
-    module.hot.accept();
-}
-
 Auth.configure({
     mandatorySignId: true,
     region: 'ap-south-1',
@@ -19,4 +15,10 @@ Auth.configure({
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-serviceWorker.unregister();
+if (module.hot) {
+    module.hot.accept('./App', () => {
+      const NextApp = require('./App').default;
+      ReactDOM.render(NextApp);
+    });
+  }
+// serviceWorker.unregister();

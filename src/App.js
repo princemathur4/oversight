@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import ProductUpload from "./modules/ProductUpload";
+import AddProduct from "./modules/AddProduct";
 import NavBar from "./components/NavBar";
 import { routes } from "./constants/routes";
 import Auth from '@aws-amplify/auth';
+import "./imports";
 
 class App extends React.Component {
 	constructor(props) {
@@ -73,7 +74,10 @@ class App extends React.Component {
 									(props) => {
 											return (
 												<Fragment>
-													<NavBar {...props} name={customProps.name} auth={authProps} />
+													{
+														path !== "/login" &&
+														<NavBar {...props} name={customProps.name} auth={authProps} />
+													}
 													{
 														!authRequired ?
 															<C
