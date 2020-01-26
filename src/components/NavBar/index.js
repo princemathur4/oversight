@@ -43,7 +43,7 @@ export default class NavBar extends Component {
         return (
             <div className="nav-bar">
                 <div className="nav-header">
-                    <img src="larboz-logo.png" className="logo-img"></img>
+                    <img src="https://i.ibb.co/wKr2ZLf/larboz-logo.png" className="logo-img"></img>
                     <div className="heading">Labroz Oversight</div>
                 </div>
                 {this.props.auth.isAuthenticated &&

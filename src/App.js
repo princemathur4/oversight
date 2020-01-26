@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-import AddProduct from "./modules/AddProduct";
 import NavBar from "./components/NavBar";
 import { routes } from "./constants/routes";
 import Auth from '@aws-amplify/auth';

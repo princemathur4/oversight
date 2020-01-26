@@ -4,7 +4,6 @@ import './index.scss';
 import App from './App';
 import Auth from '@aws-amplify/auth';
 import { theme } from "./theme";
-import * as serviceWorker from './serviceWorker';
 
 Auth.configure({
     mandatorySignId: true,
@@ -13,12 +12,4 @@ Auth.configure({
     userPoolWebClientId: 'it76hptiugtkcb4oqbq1mtr3j',
 });
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-if (module.hot) {
-    module.hot.accept('./App', () => {
-      const NextApp = require('./App').default;
-      ReactDOM.render(NextApp);
-    });
-  }
-// serviceWorker.unregister();
+ReactDOM.render( <App/>, document.getElementById('root') );
