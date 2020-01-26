@@ -1,4 +1,4 @@
-const Dotenv = require('dotenv-webpack');
+// const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const path = require( 'path' );
@@ -33,9 +33,9 @@ module.exports = merge(common,
             ],
         },
         plugins: [
-            new Dotenv({
-                path: `./config/production/.env`,
-            }),
+            // new Dotenv({
+            //     path: `./config/production/.env`,
+            // }),
             new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
             new CleanWebpackPlugin(),
             new CompressionPlugin
